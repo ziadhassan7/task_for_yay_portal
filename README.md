@@ -1,11 +1,11 @@
 
 # Process
 
-1- Confirm details to avoid misconceptions.
-2- Imagine and sketch the whole application and what technologies I would use.
-3- Start by the most basic implementation.
-4- Implement advanced details.
-5- Handle edge cases.
+1. Confirm details to avoid misconceptions.
+2. Imagine and sketch the whole application and what technologies I would use.
+3. Start by the most basic implementation.
+4. Implement advanced details.
+5. Handle edge cases.
 
 # Decisions
 
