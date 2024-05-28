@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_yay_portal/core/localization/localization.dart';
 import 'package:task_for_yay_portal/features/form/presentation/controllers/input_fields_controller.dart';
+import 'package:task_for_yay_portal/features/form/presentation/widget/text_label.dart';
 
 enum Gender {
   M,
@@ -17,43 +18,49 @@ class GenderField extends StatefulWidget {
 class _GenderFieldState extends State<GenderField> {
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
 
-      child: Row(
-        children: [
-          Text(LocalTxt().gender,),
+      child: Directionality(
+        textDirection: TextDirection.ltr,
 
-          Expanded(
-            child: RadioListTile<Gender>(
-              title: Text(LocalTxt().male),
-              groupValue: InputFieldsController.gender,
-              value: Gender.M,
-              onChanged:(Gender? value) {
-                if(value != null){
-                  setState(() {
-                    InputFieldsController.gender = value;
-                  });
-                }
-              },
+        child: Row(
+          children: [
+            TextLabel(label: LocalTxt().gender,),
+
+            Expanded(
+              flex: 20,
+              child: RadioListTile<Gender>(
+                title: Text(LocalTxt().male),
+                groupValue: InputFieldsController.gender,
+                value: Gender.M,
+                onChanged:(Gender? value) {
+                  if(value != null){
+                    setState(() {
+                      InputFieldsController.gender = value;
+                    });
+                  }
+                },
+              ),
             ),
-          ),
 
-          Expanded(
-            child: RadioListTile<Gender>(
-              title: Text(LocalTxt().female),
-              groupValue: InputFieldsController.gender,
-              value: Gender.F,
-              onChanged:(Gender? value) {
-                if(value != null){
-                  setState(() {
-                    InputFieldsController.gender = value;
-                  });
-                }
-              },
+            Expanded(
+              flex: 23,
+              child: RadioListTile<Gender>(
+                title: Text(LocalTxt().female),
+                groupValue: InputFieldsController.gender,
+                value: Gender.F,
+                onChanged:(Gender? value) {
+                  if(value != null){
+                    setState(() {
+                      InputFieldsController.gender = value;
+                    });
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
