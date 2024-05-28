@@ -9,10 +9,10 @@
 
 # Decisions
 
-### Localization Package
+## Localization Package
 
 I used the Flutter package `eazy_localization` as I find it the easiest to use, because of its straightforward implementation and clean code.
-### Local Storage (SQLite vs Hive)
+## Local Storage (SQLite vs Hive)
 
 Why did I choose Hive over SQLite?
 
@@ -31,6 +31,6 @@ And if an error occurred, you should show a widget stating the error and where i
 
 # Edge Cases
 
-1- User didn't enter one of the required fields.
-2- Internet connection problems. (For Location)
-3- Location permission not granted.
+1. User didn't enter one of the required fields.
+2. Internet connection problems. (For Location)
+3. Location permission not granted.
