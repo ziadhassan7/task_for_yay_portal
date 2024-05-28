@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../core/localization/localization.dart';
-import '../../../custom_appbar.dart';
+import '../../../common/custom_appbar.dart';
 import '../../../form/data/datasource/user_data.dart';
+import '../views/info_field.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -11,44 +12,48 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(context, title: LocalTxt().profile,),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24),
 
-        children: [
-          //Name
-          label(LocalTxt().name),
-          Text(getUserName()),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
 
-          //Email
-          label(LocalTxt().email),
-          Text(getEmail()),
+          children: [
+            //Name
+            InfoField(
+              title: LocalTxt().name,
+              data: UserData.getUserName()),
 
-          //Password
-          label(LocalTxt().password),
-          Text(getPassword()),
+            //Email
+            InfoField(
+              title: LocalTxt().email,
+              data: UserData.getEmail()),
 
-          //Gender
-          label(LocalTxt().gender),
-          Text(getGender()),
+            //Password
+            InfoField(
+              title: LocalTxt().password,
+              data: UserData.getPassword()),
 
-          //BirthDate
-          label(LocalTxt().birthDate),
-          Text(getBirthDate()),
+            //Gender
+            InfoField(
+              title: LocalTxt().gender,
+              data: UserData.getGender()),
 
-          // Open Location Button
-          openLocation()
-        ],
+            //BirthDate
+            InfoField(
+              title: LocalTxt().birthDate,
+              data: UserData.getBirthDate()),
+
+            const Spacer(),
+
+            // Open Location Button
+            openLocation()
+          ],
+        ),
       ),
     );
   }
 
-  /// Widgets:
-  Widget label(String title, ){
-    return Text(
-      title,
-      style: const TextStyle(fontWeight: FontWeight.bold),
-    );
-  }
 
   Widget openLocation(){
     return ElevatedButton(
@@ -57,23 +62,6 @@ class ProfilePage extends StatelessWidget {
         },
         child: Text(LocalTxt().openLocationButton)
     );
-  }
-
-  /// Get Data:
-  String getUserName(){
-    return UserData.getUserName();
-  }
-  String getEmail(){
-    return UserData.getEmail();
-  }
-  String getPassword(){
-    return UserData.getPassword();
-  }
-  String getGender(){
-    return UserData.getGender();
-  }
-  String getBirthDate(){
-    return UserData.getBirthDate();
   }
 
   String getLocation(){
