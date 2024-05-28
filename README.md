@@ -37,5 +37,4 @@ And if an error occurred, you should show a widget stating the error and where i
 # Edge Cases
 
 1. User didn't enter one of the required fields.
-2. Internet connection problems. (For Location)
-3. Location permission not granted.
+2. Location permission not granted.
