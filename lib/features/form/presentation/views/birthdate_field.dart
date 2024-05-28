@@ -57,7 +57,8 @@ class BirthdateField extends StatelessWidget {
 
               child: SfDateRangePicker(
                 onSelectionChanged: (DateRangePickerSelectionChangedArgs args) {
-                  InputFieldsController.birthDate = args.value.toString();
+                  DateTime pickedTime = DateTime.parse(args.value.toString());
+                  InputFieldsController.birthDate = "${pickedTime.year}-${pickedTime.month}-${pickedTime.day}";
                   Navigator.pop(context);
                 },
               ),
