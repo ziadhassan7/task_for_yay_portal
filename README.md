@@ -7,6 +7,8 @@
 4. Implement advanced details.
 5. Handle edge cases.
 
+--------------------------------------------------------------------------
+
 # Decisions
 
 ## Localization Package
@@ -20,6 +22,8 @@ SQLite is most suitable for big data sets and because we only want to store one 
 
 It would be both faster and easier to code!
 
+--------------------------------------------------------------------------
+
 # State Management (BloC)
 
 I was asked to specifically use BloC which I'm really comfortable using. I used it to show the loading state of the submit button.
@@ -28,6 +32,7 @@ Submit Button (Idle State) => User Tap => Load user input into local storage (Lo
 
 And if an error occurred, you should show a widget stating the error and where it happened.
 
+--------------------------------------------------------------------------
 
 # Edge Cases
 
