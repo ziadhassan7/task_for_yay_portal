@@ -2,12 +2,15 @@
   "form": "Form Page",
   "profile": "Profile Page",
 
-  "name": "Name",
-  "email": "Email",
-  "password": "Password",
-  "gender": "gender",
-  "birthDate": "birthDate",
+  "name": "Name:",
+  "email": "Email:",
+  "password": "Password:",
+  "gender": "Gender:",
+  "birthDate": "Birth Date:",
 
   "submit_btn": "Submit",
-  "open_location_btn": "Open User Location"
+  "open_location_btn": "Open User Location",
+
+  "male": "Male",
+  "female": "Female"
 }

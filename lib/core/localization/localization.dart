@@ -23,6 +23,10 @@ class LocalTxt {
   final String submitButton = tr('submit_btn');
   final String openLocationButton = tr('open_location_btn');
 
+  //Radio Buttons
+  final String male = tr('male');
+  final String female = tr('female');
+
 }
 
 
