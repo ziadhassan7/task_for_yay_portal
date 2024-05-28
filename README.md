@@ -11,10 +11,10 @@
 
 # Decisions
 
-## Localization Package
+## 1) Localization Package
 
 I used the Flutter package `eazy_localization` as I find it the easiest to use, because of its straightforward implementation and clean code.
-## Local Storage (SQLite vs Hive)
+## 2) Local Storage (SQLite vs Hive)
 
 Why did I choose Hive over SQLite?
 
