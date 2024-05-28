@@ -1,0 +1,10 @@
+{
+  "form": "Form Page",
+  "profile": "Profile Page",
+
+  "name": "Name",
+  "email": "Email",
+  "password": "Password",
+
+  "submit_btn": "Submit"
+}
