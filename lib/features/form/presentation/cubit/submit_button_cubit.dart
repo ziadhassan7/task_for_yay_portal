@@ -30,10 +30,15 @@ class SubmitButtonCubit extends Cubit<SubmitButtonStates>{
 
 
   _pushIntoLocalStorage() async {
+    _clearOldData();
+
     // Push into Hive
     UserData.updateUserName(InputFieldsController.nameController.text);
     UserData.updateEmail(InputFieldsController.emailController.text);
     UserData.updatePassword(InputFieldsController.passwordController.text);
+
+    UserData.updateGender(InputFieldsController.gender.name);
+    UserData.updateBirthDate(InputFieldsController.birthDate);
 
     await _pushLocationIntoHive();
   }
@@ -41,6 +46,11 @@ class SubmitButtonCubit extends Cubit<SubmitButtonStates>{
   _pushLocationIntoHive() async {
     Position position = await LocationController.getCurrentLocation();
     UserData.updateLocation("${position.latitude},${position.longitude}");
+  }
+
+  _clearOldData(){
+    UserData.clearBirthDate();
+    UserData.clearLocation();
   }
 
 }
