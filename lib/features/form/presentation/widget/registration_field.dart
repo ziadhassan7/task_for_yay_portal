@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_yay_portal/features/form/presentation/widget/text_label.dart';
+import '../../../../core/styles/default_padding.dart';
 
 
 class RegistrationField extends StatelessWidget {
@@ -16,7 +17,7 @@ class RegistrationField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      padding: defaultPadding,
       child: Column(
         children: [
           label(),
