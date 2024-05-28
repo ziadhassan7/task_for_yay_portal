@@ -52,6 +52,10 @@ class UserData{
     return _hiveBox.get(USER_BIRTHDATE, defaultValue: 'NULL');
   }
 
+  static Future<void> clearBirthDate() async {
+    await _hiveBox.put(USER_BIRTHDATE, '--');
+  }
+
   ///                                                                           / Location
   static Future<void> updateLocation(String location) async {
     await _hiveBox.put(USER_LOCATION, location);
@@ -59,6 +63,10 @@ class UserData{
 
   static String getLocation() {
     return _hiveBox.get(USER_LOCATION, defaultValue: 'NULL');
+  }
+
+  static Future<void> clearLocation() async {
+    await _hiveBox.put(USER_BIRTHDATE, '--');
   }
 
 }
