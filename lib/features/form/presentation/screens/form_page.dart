@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_yay_portal/core/localization/localization.dart';
+import 'package:task_for_yay_portal/features/form/presentation/views/birthdate_field.dart';
 import 'package:task_for_yay_portal/features/form/presentation/views/gender_field.dart';
 import 'package:task_for_yay_portal/features/form/presentation/views/name_field.dart';
 import '../../../common/custom_appbar.dart';
@@ -38,7 +39,7 @@ class FormPage extends StatelessWidget {
             GenderField(),
 
             /// Birthdate
-
+            BirthdateField(),
 
             const Spacer(),
 
