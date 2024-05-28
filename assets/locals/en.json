@@ -5,6 +5,9 @@
   "name": "Name",
   "email": "Email",
   "password": "Password",
+  "gender": "gender",
+  "birthDate": "birthDate",
 
-  "submit_btn": "Submit"
+  "submit_btn": "Submit",
+  "open_location_btn": "Open User Location"
 }

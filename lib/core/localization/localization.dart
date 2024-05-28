@@ -16,9 +16,12 @@ class LocalTxt {
   final String email = tr('email');
   final String password = tr('password');
 
+  final String gender = tr('gender');
+  final String birthDate = tr('birthDate');
 
   //Buttons
   final String submitButton = tr('submit_btn');
+  final String openLocationButton = tr('open_location_btn');
 
 }
 
