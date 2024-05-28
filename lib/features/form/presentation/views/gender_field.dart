@@ -3,6 +3,8 @@ import 'package:task_for_yay_portal/core/localization/localization.dart';
 import 'package:task_for_yay_portal/features/form/presentation/controllers/input_fields_controller.dart';
 import 'package:task_for_yay_portal/features/form/presentation/widget/text_label.dart';
 
+import '../../../../core/styles/default_padding.dart';
+
 enum Gender {
   M,
   F
@@ -19,7 +21,7 @@ class _GenderFieldState extends State<GenderField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      padding: defaultPadding,
 
       child: Directionality(
         textDirection: TextDirection.ltr,
