@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_yay_portal/core/localization/localization.dart';
+import 'package:task_for_yay_portal/features/form/presentation/views/gender_field.dart';
 import 'package:task_for_yay_portal/features/form/presentation/views/name_field.dart';
-import '../../../custom_appbar.dart';
+import '../../../common/custom_appbar.dart';
 import '../views/email_field.dart';
 import '../views/password_field.dart';
 import '../widget/submit_button.dart';
@@ -17,27 +18,34 @@ class FormPage extends StatelessWidget {
       appBar: CustomAppBar(context, title: LocalTxt().form,),
 
       ///----------------------------
-      body: Column(
-        children: [
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
 
-          /// Name
-          NameField(),
+        child: Column(
 
-          /// Email
-          EmailField(),
+          children: [
 
-          /// Password
-          PasswordField(),
+            /// Name
+            NameField(),
 
-          /// Gender
+            /// Email
+            EmailField(),
+
+            /// Password
+            PasswordField(),
+
+            /// Gender
+            GenderField(),
+
+            /// Birthdate
 
 
-          /// Birthdate
+            const Spacer(),
 
-
-          ///Submit Button
-          SubmitButton(),
-        ],
+            ///Submit Button
+            SubmitButton(),
+          ],
+        ),
       ),
 
     );
