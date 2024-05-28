@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'form/presentation/widget/localization_button.dart';
+import '../form/presentation/widget/localization_button.dart';
 
 //ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -30,16 +30,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       //color
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Row(
-        children: [
-          //Page Title
-          Text(title),
+      title: Directionality(
+        textDirection: TextDirection.ltr,
 
-          const Spacer(),
+        child: Row(
+          children: [
+            //Page Title
+            Text(title),
 
-          //Icon
-          const LocalizationBtn(),
-        ],
+            const Spacer(),
+
+            //Icon
+            const LocalizationBtn(),
+          ],
+        ),
       ),
     );
   }
