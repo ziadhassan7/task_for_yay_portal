@@ -6,6 +6,7 @@
 3. Start by the most basic implementation.
 4. Implement advanced details.
 5. Handle edge cases.
+6. Heavy testing.
 
 --------------------------------------------------------------------------
 # Project Structure
