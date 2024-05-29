@@ -12,6 +12,8 @@ class EmailField extends StatelessWidget {
   Widget build(BuildContext context) {
     return RegistrationField(
         title: LocalTxt().email,
-        controller: InputFieldsController.emailController);
+        controller: InputFieldsController.emailController,
+        formKey: InputFieldsController.emailFormKey,
+        validator: InputFieldsController.validator,);
   }
 }

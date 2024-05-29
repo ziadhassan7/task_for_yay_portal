@@ -6,12 +6,16 @@ import '../../../../core/styles/default_padding.dart';
 class RegistrationField extends StatelessWidget {
   final String title;
   final TextEditingController controller;
+  final GlobalKey<FormState>? formKey;
+  final String? Function(String?)? validator;
   final bool isPassword;
 
   const RegistrationField(
       {required this.title,
       required this.controller,
       this.isPassword = false,
+      this.formKey,
+      this.validator,
       super.key});
 
   @override
@@ -33,8 +37,15 @@ class RegistrationField extends StatelessWidget {
   }
 
   Widget formField(){
-    return TextFormField(
-      controller: controller,
+    return Form(
+      key: formKey,
+
+      child: TextFormField(
+        controller: controller,
+        validator: validator,
+
+        obscureText: isPassword? true:false,
+      ),
     );
   }
 }

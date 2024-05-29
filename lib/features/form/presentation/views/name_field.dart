@@ -10,6 +10,8 @@ class NameField extends StatelessWidget {
   Widget build(BuildContext context) {
     return RegistrationField(
         title: LocalTxt().name,
-        controller: InputFieldsController.nameController);
+        controller: InputFieldsController.nameController,
+        formKey: InputFieldsController.nameFormKey,
+        validator: InputFieldsController.validator,);
   }
 }

@@ -13,6 +13,7 @@ class PasswordField extends StatelessWidget {
       title: LocalTxt().password,
       controller: InputFieldsController.passwordController,
       isPassword: true,
-    );
+      formKey: InputFieldsController.passwordFormKey,
+      validator: InputFieldsController.validator,);
   }
 }

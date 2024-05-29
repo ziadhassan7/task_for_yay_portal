@@ -12,18 +12,21 @@ class SubmitButtonCubit extends Cubit<SubmitButtonStates>{
 
   ///Refresh current List
   submit() async {
-    //Loading
-    emit(LoadingState());
+    if(InputFieldsController.validateForSubmit()){
 
-    try{
-      //Save Data
-      await _pushIntoLocalStorage();
-      emit(SuccessState());
+      //Loading
+      emit(LoadingState());
 
-    } catch (e){
-      //Error
-      emit(ErrorState());
-      Log("GPS Error", e);
+      try {
+        //Save Data
+        await _pushIntoLocalStorage();
+        emit(SuccessState());
+      } catch (e) {
+        //Error
+        emit(ErrorState());
+        Log("GPS Error", e);
+      }
+
     }
   }
 
