@@ -7,7 +7,7 @@ import 'package:task_for_yay_portal/features/profile/presentation/screens/profil
 import '../../../../core/localization/localization.dart';
 
 class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key});
+  SubmitButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class SubmitButton extends StatelessWidget {
         /// In Success, navigate to the next page
         if (state is SuccessState) {
           // Navigate to the next page when SuccessState is triggered
-          AppRouter.navigateTo(context, const ProfilePage());
+          AppRouter.navigateTo(context, ProfilePage());
         }
       },
 
