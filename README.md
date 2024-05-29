@@ -8,12 +8,22 @@
 5. Handle edge cases.
 
 --------------------------------------------------------------------------
+# Project Structure
 
+1) **Core:** All elements shared amongst the entire application. 
+2) **Features:** It contains the main features of the application, which contains
+	1) **Presentation:** (Views , State Management , Controllers) 
+	2) **Data:** (Local Data source , Model)
+3) **Assets:** Locals - en , ar -
+
+_____________________________________________
 # Decisions
 
 ## 1) Localization Package
 
 I used the Flutter package `eazy_localization` as I find it the easiest to use, because of its straightforward implementation and clean code.
+
+**Flows of this approach:** You can't mark the widgets as `const` , which was counterproductive.
 ## 2) Local Storage (SQLite vs Hive)
 
 Why did I choose Hive over SQLite?
