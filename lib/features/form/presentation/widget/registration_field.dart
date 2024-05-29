@@ -34,7 +34,7 @@ class RegistrationField extends StatelessWidget {
 
   Widget formField(){
     return TextFormField(
-
+      controller: controller,
     );
   }
 }
