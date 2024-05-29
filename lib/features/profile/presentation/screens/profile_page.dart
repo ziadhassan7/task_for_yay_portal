@@ -12,7 +12,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context, title: LocalTxt().profile,),
+      appBar: CustomAppBar(context, title: LocalTxt().profile, allowLeading: true,),
 
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
