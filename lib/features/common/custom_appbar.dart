@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_for_yay_portal/core/app_router.dart';
+import 'package:task_for_yay_portal/features/form/presentation/screens/form_page.dart';
 import '../form/presentation/widget/localization_button.dart';
 
 //ignore: must_be_immutable
@@ -7,11 +9,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// AppBar's title
   final String title;
+  final bool allowLeading;
 
   const CustomAppBar(
       this.context, {
         super.key,
         required this.title,
+        this.allowLeading = false
       });
 
   static const double _fixedHeight = 60;
@@ -28,19 +32,33 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
 
     return AppBar(
+      automaticallyImplyLeading: false,
       //color
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
-      title: Row(
-        children: [
-          //Page Title
-          Text(title),
+      title: Directionality(
+        textDirection: TextDirection.ltr,
 
-          const Spacer(),
+        child: Row(
+          children: [
+            Visibility(
+              visible: allowLeading,
 
-          //Icon
-          const LocalizationBtn(),
-        ],
+              child: IconButton(
+                onPressed: ()=> AppRouter.navigateTo(context, FormPage()),
+                icon: const Icon(Icons.arrow_back_ios_rounded),
+              ),
+            ),
+
+            //Page Title
+            Text(title),
+
+            const Spacer(),
+
+            //Icon
+            const LocalizationBtn(),
+          ],
+        ),
       ),
     );
   }
