@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart' as t;
 import 'package:flutter/material.dart';
 import '../../../../core/localization/localization.dart';
 import '../../../common/custom_appbar.dart';
@@ -15,40 +16,44 @@ class ProfilePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
 
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Directionality(
+          textDirection: TextDirection.ltr,
 
-          children: [
-            //Name
-            InfoField(
-              title: LocalTxt().name,
-              data: UserData.getUserName()),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
 
-            //Email
-            InfoField(
-              title: LocalTxt().email,
-              data: UserData.getEmail()),
+            children: [
+              //Name
+              InfoField(
+                title: t.tr('name', context: context),
+                data: UserData.getUserName()),
 
-            //Password
-            InfoField(
-              title: LocalTxt().password,
-              data: UserData.getPassword()),
+              //Email
+              InfoField(
+                title: LocalTxt().email,
+                data: UserData.getEmail()),
 
-            //Gender
-            InfoField(
-              title: LocalTxt().gender,
-              data: UserData.getGender()),
+              //Password
+              InfoField(
+                title: LocalTxt().password,
+                data: UserData.getPassword()),
 
-            //BirthDate
-            InfoField(
-              title: LocalTxt().birthDate,
-              data: UserData.getBirthDate()),
+              //Gender
+              InfoField(
+                title: LocalTxt().gender,
+                data: UserData.getGender()),
 
-            const Spacer(),
+              //BirthDate
+              InfoField(
+                title: LocalTxt().birthDate,
+                data: UserData.getBirthDate()),
 
-            // Open Location Button
-            openLocation()
-          ],
+              const Spacer(),
+
+              // Open Location Button
+              openLocation()
+            ],
+          ),
         ),
       ),
     );
