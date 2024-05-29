@@ -30,20 +30,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       //color
       backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Directionality(
-        textDirection: TextDirection.ltr,
 
-        child: Row(
-          children: [
-            //Page Title
-            Text(title),
+      title: Row(
+        children: [
+          //Page Title
+          Text(title),
 
-            const Spacer(),
+          const Spacer(),
 
-            //Icon
-            const LocalizationBtn(),
-          ],
-        ),
+          //Icon
+          const LocalizationBtn(),
+        ],
       ),
     );
   }
