@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_for_yay_portal/features/form/data/datasource/user_data.dart';
 import 'package:task_for_yay_portal/features/form/presentation/cubit/submit_button_cubit.dart';
 import 'package:task_for_yay_portal/features/form/presentation/screens/form_page.dart';
+import 'package:task_for_yay_portal/features/profile/presentation/screens/profile_page.dart';
 import 'core/bloc_observer.dart';
 import 'injection.dart' as inject;
 
@@ -52,8 +54,16 @@ class MyApp extends StatelessWidget {
         ),
 
         //Handle Color Theme Change
-        home: FormPage(),
+        home: getInitialPage(),
       ),
     );
+  }
+
+  Widget getInitialPage(){
+    if(UserData.getUserName() == 'NO NAME'){
+      return FormPage();
+    } else {
+      return ProfilePage();
+    }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_for_yay_portal/core/app_router.dart';
+import 'package:task_for_yay_portal/features/form/data/datasource/user_data.dart';
 import 'package:task_for_yay_portal/features/form/presentation/screens/form_page.dart';
 import '../form/presentation/widget/localization_button.dart';
 
@@ -45,7 +46,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               visible: allowLeading,
 
               child: IconButton(
-                onPressed: ()=> AppRouter.navigateTo(context, FormPage()),
+                onPressed: () {
+                  UserData.clearUser();
+                  AppRouter.navigateTo(context, FormPage(), replace: true);
+                },
                 icon: const Icon(Icons.arrow_back_ios_rounded),
               ),
             ),

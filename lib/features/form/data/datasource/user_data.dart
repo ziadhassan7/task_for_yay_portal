@@ -16,6 +16,10 @@ class UserData{
     return _hiveBox.get(USER_NAME, defaultValue: 'NO NAME');
   }
 
+  static Future<void> clearUser() async {
+    await _hiveBox.put(USER_NAME, 'NO NAME');
+  }
+
   ///                                                                           / Email
   static Future<void> updateEmail(String email) async {
     await _hiveBox.put(USER_EMAIL, email);
