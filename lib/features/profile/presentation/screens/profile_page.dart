@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart' as t;
 import 'package:flutter/material.dart';
+import 'package:task_for_yay_portal/features/profile/presentation/views/open_location_button.dart';
 import '../../../../core/localization/localization.dart';
 import '../../../common/custom_appbar.dart';
 import '../../../form/data/datasource/user_data.dart';
@@ -51,26 +52,12 @@ class ProfilePage extends StatelessWidget {
               const Spacer(),
 
               // Open Location Button
-              openLocation()
+              OpenLocationButton(),
             ],
           ),
         ),
       ),
     );
-  }
-
-
-  Widget openLocation(){
-    return ElevatedButton(
-        onPressed: (){
-
-        },
-        child: Text(LocalTxt().openLocationButton)
-    );
-  }
-
-  String getLocation(){
-    return UserData.getLocation();
   }
 }
 
