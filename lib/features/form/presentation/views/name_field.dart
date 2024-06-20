@@ -9,7 +9,7 @@ class NameField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Localoo localTxt = Localoo(context);
+    LocalTxt localTxt = LocalTxt(context);
 
     return RegistrationField(
         title: localTxt.name,

@@ -11,7 +11,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Localoo localTxt = Localoo(context);
+    LocalTxt localTxt = LocalTxt(context);
 
     return Scaffold(
       appBar: CustomAppBar(context, title: localTxt.profile, allowLeading: true,),

@@ -13,7 +13,7 @@ enum Gender {
 class GenderField extends StatefulWidget {
   const GenderField(this.localTxt, {super.key});
 
-  final Localoo localTxt;
+  final LocalTxt localTxt;
 
   @override
   State<GenderField> createState() => _GenderFieldState();

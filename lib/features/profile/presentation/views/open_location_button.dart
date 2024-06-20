@@ -9,7 +9,7 @@ class OpenLocationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Localoo localTxt = Localoo(context);
+    LocalTxt localTxt = LocalTxt(context);
 
     return ElevatedButton(
         onPressed: (){

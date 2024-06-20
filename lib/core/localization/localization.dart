@@ -6,10 +6,10 @@ enum Locals {
   en, ar
 }
 
-class Localoo{
+class LocalTxt{
   BuildContext context;
 
-  Localoo(this.context);
+  LocalTxt(this.context);
 
   //Titles
   String get form => context.tr('form');
