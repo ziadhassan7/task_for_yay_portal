@@ -6,26 +6,30 @@ enum Locals {
   en, ar
 }
 
-class LocalTxt {
+class Localoo{
+  BuildContext context;
+
+  Localoo(this.context);
+
   //Titles
-  final String form = tr('form');
-  final String profile = tr('profile');
+  String get form => context.tr('form');
+  String get profile => context.tr('profile');
 
   //Labels
-  final String name = tr('name');
-  final String email = tr('email');
-  final String password = tr('password');
+  String get name => context.tr('name');
+  String get email => context.tr('email');
+  String get password => context.tr('password');
 
-  final String gender = tr('gender');
-  final String birthDate = tr('birthDate');
+  String get gender => context.tr('gender');
+  String get birthDate => context.tr('birthDate');
 
   //Buttons
-  final String submitButton = tr('submit_btn');
-  final String openLocationButton = tr('open_location_btn');
+  String get submitButton => context.tr('submit_btn');
+  String get openLocationButton => context.tr('open_location_btn');
 
   //Radio Buttons
-  final String male = tr('male');
-  final String female = tr('female');
+  String get male => context.tr('male');
+  String get female => context.tr('female');
 
 }
 

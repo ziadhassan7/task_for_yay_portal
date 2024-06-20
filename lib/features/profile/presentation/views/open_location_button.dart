@@ -9,12 +9,14 @@ class OpenLocationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Localoo localTxt = Localoo(context);
+
     return ElevatedButton(
         onPressed: (){
           List<String> location = getLocation().split(',');
           MapUtils.openMap(location[0], location[1]);
         },
-        child: Text(LocalTxt().openLocationButton)
+        child: Text(localTxt.openLocationButton)
     );
   }
 

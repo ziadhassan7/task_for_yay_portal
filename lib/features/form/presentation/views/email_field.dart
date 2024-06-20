@@ -5,13 +5,14 @@ import '../../../../core/localization/localization.dart';
 import '../controllers/input_fields_controller.dart';
 
 class EmailField extends StatelessWidget {
-  const EmailField({super.key});
+  const EmailField(this.title, {super.key,});
 
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return RegistrationField(
-        title: LocalTxt().email,
+        title: title,
         controller: InputFieldsController.emailController,
         formKey: InputFieldsController.emailFormKey,
         validator: InputFieldsController.validator,);

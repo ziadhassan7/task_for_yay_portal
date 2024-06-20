@@ -11,7 +11,9 @@ enum Gender {
 }
 
 class GenderField extends StatefulWidget {
-  const GenderField({super.key});
+  const GenderField(this.localTxt, {super.key});
+
+  final Localoo localTxt;
 
   @override
   State<GenderField> createState() => _GenderFieldState();
@@ -20,6 +22,7 @@ class GenderField extends StatefulWidget {
 class _GenderFieldState extends State<GenderField> {
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: defaultPadding,
 
@@ -28,12 +31,12 @@ class _GenderFieldState extends State<GenderField> {
 
         child: Row(
           children: [
-            TextLabel(label: LocalTxt().gender,),
+            TextLabel(label: widget.localTxt.gender,),
 
             Expanded(
               flex: 20,
               child: RadioListTile<Gender>(
-                title: Text(LocalTxt().male),
+                title: Text(widget.localTxt.male),
                 groupValue: InputFieldsController.gender,
                 value: Gender.M,
                 onChanged:(Gender? value) {
@@ -49,7 +52,7 @@ class _GenderFieldState extends State<GenderField> {
             Expanded(
               flex: 23,
               child: RadioListTile<Gender>(
-                title: Text(LocalTxt().female),
+                title: Text(widget.localTxt.female),
                 groupValue: InputFieldsController.gender,
                 value: Gender.F,
                 onChanged:(Gender? value) {

@@ -11,8 +11,10 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Localoo localTxt = Localoo(context);
+
     return Scaffold(
-      appBar: CustomAppBar(context, title: LocalTxt().profile, allowLeading: true,),
+      appBar: CustomAppBar(context, title: localTxt.profile, allowLeading: true,),
 
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
@@ -31,28 +33,28 @@ class ProfilePage extends StatelessWidget {
 
               //Email
               InfoField(
-                title: LocalTxt().email,
+                title: localTxt.email,
                 data: UserData.getEmail()),
 
               //Password
               InfoField(
-                title: LocalTxt().password,
+                title: localTxt.password,
                 data: UserData.getPassword()),
 
               //Gender
               InfoField(
-                title: LocalTxt().gender,
+                title: localTxt.gender,
                 data: UserData.getGender()),
 
               //BirthDate
               InfoField(
-                title: LocalTxt().birthDate,
+                title: localTxt.birthDate,
                 data: UserData.getBirthDate()),
 
               const Spacer(),
 
               // Open Location Button
-              OpenLocationButton(),
+              const OpenLocationButton(),
             ],
           ),
         ),

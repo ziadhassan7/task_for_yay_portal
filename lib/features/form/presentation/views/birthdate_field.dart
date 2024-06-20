@@ -6,14 +6,16 @@ import '../../../../core/styles/default_padding.dart';
 import '../widget/text_label.dart';
 
 class BirthdateField extends StatelessWidget {
-  const BirthdateField({super.key});
+  const BirthdateField(this.title, {super.key});
+
+  final String title;
   
   static late double screenHeight;
   static late double screenWidth;
 
   @override
   Widget build(BuildContext context) {
-    
+
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
     
@@ -25,7 +27,7 @@ class BirthdateField extends StatelessWidget {
 
         child: Row(
           children: [
-            TextLabel(label: LocalTxt().birthDate,),
+            TextLabel(label: title,),
 
             const Spacer(),
 

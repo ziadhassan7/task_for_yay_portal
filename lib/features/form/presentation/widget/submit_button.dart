@@ -4,20 +4,22 @@ import 'package:task_for_yay_portal/core/app_router.dart';
 import 'package:task_for_yay_portal/features/form/presentation/cubit/submit_button_cubit.dart';
 import 'package:task_for_yay_portal/features/form/presentation/cubit/submit_button_states.dart';
 import 'package:task_for_yay_portal/features/profile/presentation/screens/profile_page.dart';
-import '../../../../core/localization/localization.dart';
 
 class SubmitButton extends StatelessWidget {
-  SubmitButton({super.key});
+  const SubmitButton(this.title, {super.key});
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
+
     return BlocListener<SubmitButtonCubit, SubmitButtonStates>(
 
       listener: (context, state){
         /// In Success, navigate to the next page
         if (state is SuccessState) {
           // Navigate to the next page when SuccessState is triggered
-          AppRouter.navigateTo(context, ProfilePage());
+          AppRouter.navigateTo(context, const ProfilePage());
         }
       },
 
@@ -39,7 +41,7 @@ class SubmitButton extends StatelessWidget {
                   }
 
                   //Idle: Submit
-                  return Text(LocalTxt().submitButton);
+                  return Text(title);
                 }
               )
           ),

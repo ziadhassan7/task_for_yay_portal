@@ -8,8 +8,11 @@ class NameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Localoo localTxt = Localoo(context);
+
     return RegistrationField(
-        title: LocalTxt().name,
+        title: localTxt.name,
         controller: InputFieldsController.nameController,
         formKey: InputFieldsController.nameFormKey,
         validator: InputFieldsController.validator,);

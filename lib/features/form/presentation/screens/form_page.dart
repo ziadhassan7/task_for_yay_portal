@@ -13,10 +13,13 @@ class FormPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Localoo localTxt = Localoo(context);
+
     return Scaffold(
 
       /// Title , Localization Button
-      appBar: CustomAppBar(context, title: LocalTxt().form,),
+      appBar: CustomAppBar(context, title: localTxt.form,),
 
       ///----------------------------
       body: Padding(
@@ -27,24 +30,24 @@ class FormPage extends StatelessWidget {
           children: [
 
             /// Name
-            NameField(),
+            const NameField(), //slower cuz each build would have to initialize LocalTxt object with a context
 
             /// Email
-            EmailField(),
+            EmailField(localTxt.email), //faster cuz we pass an already initialized obj
 
             /// Password
-            PasswordField(),
+            PasswordField(localTxt.password),
 
             /// Gender
-            GenderField(),
+            GenderField(localTxt),
 
             /// Birthdate
-            BirthdateField(),
+            BirthdateField(localTxt.birthDate),
 
             const Spacer(),
 
             ///Submit Button
-            SubmitButton(),
+            SubmitButton(localTxt.submitButton),
           ],
         ),
       ),
