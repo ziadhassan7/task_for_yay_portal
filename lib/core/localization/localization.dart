@@ -17,7 +17,7 @@ class LocalTxt{
 
   //Labels
   String get name => context.tr('name');
-  String get email => context.tr('email');
+  static String email(context) => context.tr('email'); //You might prefer to do it this way to force user to pass context on build
   String get password => context.tr('password');
 
   String get gender => context.tr('gender');

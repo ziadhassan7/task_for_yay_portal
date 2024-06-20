@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
 
               //Email
               InfoField(
-                title: localTxt.email,
+                title: LocalTxt.email(context),
                 data: UserData.getEmail()),
 
               //Password

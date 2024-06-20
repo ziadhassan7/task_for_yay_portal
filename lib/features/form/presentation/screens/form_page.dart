@@ -31,9 +31,10 @@ class FormPage extends StatelessWidget {
 
             /// Name
             const NameField(), //slower cuz each build would have to initialize LocalTxt object with a context
+            //But I prefer doing it this way to be able to easily separate widgets and ensure state management
 
             /// Email
-            EmailField(localTxt.email), //faster cuz we pass an already initialized obj
+            EmailField(LocalTxt.email(context)), //faster cuz we pass an already initialized obj
 
             /// Password
             PasswordField(localTxt.password),
